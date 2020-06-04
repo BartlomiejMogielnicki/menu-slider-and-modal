@@ -17,6 +17,11 @@ body {
     font-family: 'Lato', sans-serif;
     height: 100vh;
     background-color: var(--secondary-color);
+    transition: .3s linear;
+}
+
+body.show-nav {
+    transform: translateX(200px);
 }
 
 nav {
@@ -30,6 +35,7 @@ nav {
     bottom: 0;
     width: 200px;
     padding-top: 30px;
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
     transform: translateX(-100%);
 }
 
@@ -58,6 +64,10 @@ nav ul li:first-of-type {
 nav ul li a {
     color: white;
     text-decoration: none;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
 }
 
 header {
@@ -117,7 +127,7 @@ main ul {
     text-indent: 40px;
 }
 
-.burger {
+.nav-btn {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -138,6 +148,10 @@ main ul {
     display: none;
 }
 
+.modal-container.show-modal {
+    display: block;
+}
+
 .modal {
     position: absolute;
     left: 50%;
@@ -148,6 +162,7 @@ main ul {
     height: 475px;
     width: 375px;
     border-radius: 5px;
+    animation: showModal .3s linear;
 }
 
 .modal-title {
@@ -194,4 +209,14 @@ form input::placeholder {
     margin: 20px auto 0;
     background-color: var(--secondary-color);
     color: white;
+}
+
+@keyframes showModal {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
